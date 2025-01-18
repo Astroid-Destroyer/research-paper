@@ -12,6 +12,8 @@
 \usepackage{float}
 % For space seperator
 \usepackage{setspace}
+% Sub Import package
+\usepackage{import}
 
 \title{Boisakh - The Bengali GPT for lit-holics}
 \author{
@@ -47,8 +49,23 @@
 \end{appendix}
 \pagebreak
 
-% Introduction
-\input{Sections/Introduction.tex}
+% Project Overview
+\subimport{Sections/}{project-overview.tex}
+
+% Literature survey
+\subimport{Sections/}{literature-survey.tex}
+
+% System block diagram
+\subimport{Sections/}{system-block-diagram.tex}
+
+% Project methodology
+\subimport{Sections/}{project-methodology.tex}
+
+% Technical platform
+\subimport{Sections/}{technical-platform.tex}
+
+% Expected results
+\subimport{Sections/}{expected-result.tex}
 
 % References
 \newpage
