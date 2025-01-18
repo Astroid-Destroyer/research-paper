@@ -1,0 +1,53 @@
+\documentclass{article}
+
+% Input encoding
+\usepackage[utf8]{inputenc}
+% Font encoding
+\usepackage[T1]{fontenc}
+% For adding graphics(images)
+\usepackage{graphicx}
+% For sub-images
+\usepackage{caption}
+% Add-support for float precision
+\usepackage{float}
+% For space seperator
+\usepackage{setspace}
+
+\title{Boisakh - The Bengali GPT for lit-holics}
+\author{
+    Akash Lohar \and
+    Kaustavee Ghosh \and
+    Sampriti Majumder \and
+    Subham Mandal \and
+    Soumadeep Ghosh \and
+    Md Monabbar Anjum
+}
+\date{20-January-2025}
+
+% Global table of content depth
+\setcounter{tocdepth}{4}
+
+% Document
+\begin{document}
+
+\pagenumbering{gobble}
+% Title page
+\maketitle
+\pagebreak
+\pagenumbering{arabic}
+
+% TOC
+\doublespace % set space
+\tableofcontents
+\singlespace % reset reset
+% other
+\begin{appendix}
+    \listoffigures
+    \listoftables
+\end{appendix}
+\pagebreak
+
+% Introduction
+\input{Sections/Introduction.tex}
+
+\end{document}
