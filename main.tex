@@ -20,6 +20,8 @@
 \usepackage{setspace}
 % Sub Import package
 \usepackage{import}
+% Make link clickable
+\usepackage{hyperref}
 % For maths
 \usepackage{amsmath}
 % Control section formatting
@@ -62,26 +64,27 @@
 \pagebreak
 
 % Project Overview
-\subimport{Sections/}{project-overview.tex}
+\input{Sections/project-overview.tex}
 
 % Literature survey
-\subimport{Sections/}{literature-survey.tex}
+\input{Sections/literature-survey.tex}
 
 % System block diagram
-\subimport{Sections/}{system-block-diagram.tex}
+\input{Sections/system-block-diagram.tex}
 
 % Project methodology
-\subimport{Sections/}{project-methodology.tex}
+\input{Sections/project-methodology.tex}
 
 % Technical platform
-\subimport{Sections/}{technical-platform.tex}
+\input{Sections/technical-platform.tex}
 
 % Expected results
-\subimport{Sections/}{expected-result.tex}
+\input{Sections/expected-result.tex}
 
 \section{Test}
 \begin{itemize}
-    \item Reference 1
+    \item Reference 1 \cite{NLPTranslation:1} embededkd \cite{BengaliMT:1}
+    \item \cite{AWSRNN:1}
     \item Reference 2
 \end{itemize}
 
