@@ -1,9 +1,6 @@
 \subsection{Normalization}
 
-Normalization is a series of tasks to convert all text on the same standard. And it is done by setting a
-single encoding, converting numbers to their word equivalents, and so on. The main goal of
-normalization is representing all text in unformat so that all input-output text will be in a standard
-format for machine learning problems. It means converting numbers, abbreviations, and special characters, and changed them to clean text following some distinct steps:
+Normalization is a series of tasks to convert all text on the same standard. And it is done by setting a single encoding, converting numbers to their word equivalents, and so on. The main goal of normalization is representing all text in unformat so that all input-output text will be in a standard format for machine learning problems. It means converting numbers, abbreviations, and special characters, and changed them to clean text following some distinct steps:
 \begin{itemize}
     \item \textbf{Set encoding into UTF-8:} All text must be in single encoding format so that all ASCII text should be converted into Unicode. As corpus data is collected from the various sources there is a possibility to have ASCII text. All text must be decoded into a normalized form, such as UTF 8.
     \item \textbf{Other scripts in the corpus:} Bengali text also contains few non-Bengali scripts, especially from English script. It is necessary to transliterate the words from other languages into Bengali.
