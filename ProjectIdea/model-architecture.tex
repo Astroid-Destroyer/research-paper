@@ -1,0 +1,21 @@
+\subsection{Model Architecture}
+
+Any typical LLM has 3 major phases.
+\begin{itemize}
+    \item The first phase deals with the collection, retrieval and feature engineering of the data.
+          The LLM architecture’s performance is solely dependent on the data it is trained with. Therefore, the text processing of data is a crucial step for the accuracy of the LLM model. But computers do not deal with pure text data therefore the text data is converted to numbers called vectors which are then fed into ML / Deep Learning models to generate texts using the Natural Language Generation process.
+    \item The second phase is about the selection of the accurate architecture/model for NLG.
+          From the selection of neural networks to correction of weights and biases for better optimized training to the number of hidden layers and nodes, all the hyperparameters for the training of the model and output generation are done in this phase. The third phase validates the performance of the LLM model by comparing the training output with the test data using linear regression algorithms and accuracy test scores.
+    \item The final step is
+          the benchmarking of the parameters for further future improvement.There are two main categories of network architectures depending on the type of the connections between the neurons: “feed-forward neural networks” and “recurrent neural networks”. If there is no “feedback” from the outputs of the neurons towards the inputs throughout the network, then the network is referred to as a “feed-forward neural network”. Otherwise, if there exists such feedback, i.e., a synaptic connection from the outputs towards the inputs (either their own inputs or the inputs of other neurons), then the network is called a “recurrent neural network”.
+\end{itemize}
+
+Among many other learning algorithms, the “back-propagation algorithm” is the most
+popular and the mostly used one for the training of feed-forward neural networks. It is, in essence, a means of updating networks’ synaptic weights by back propagating a gradient vector in which each element is defined as the derivative of an error measure with respect
+to a parameter.
+
+Error signals are usually defined as the difference between the actual network outputs and the desired outputs. Therefore, a set of desired outputs must be available for training. For that reason, back-propagation is a supervised learning rule.
+
+For this project we have drawn inspiration from the GPT 2 architecture model and have implemented it.The GPT-2 architecture which we use for BanglaGPT model. The GPT-2 model architecture mainly employs the decoder of the original transformer model .The GPT-2 model comprises a collection of decoder blocks,with each decoder block containing three crucial components:the masked self-attention block, the feed-forward neural network block, and the normalization block.
+
+The objective of the self-attention block is to determine which set of words to concentrate on. During the hidden layer, the feed-forward neural network block determines the correlation between the input words. The normalization block then normalizes the output of the feed-forward neural network.The first decoder block sends the resulting vector up the stack to be handled by the following blocks. Finally, the output of the last decoder block is passed into linear output layers. The output tokens are chosen based on the output probabilities with the highest scores.
