@@ -27,6 +27,8 @@
 % Control section formatting
 \usepackage{titlesec}
 
+\usepackage{geometry}
+
 \titleformat{\section}{\bfseries\fontsize{14}{16}\selectfont}{\thesection}{1em}{}
 \titleformat{\subsection}{\bfseries\fontsize{12}{14}\selectfont}{\thesubsection}{1em}{}
 \title{Boisakh - The Bengali GPT for lit-holics}
@@ -48,7 +50,9 @@
 
 \pagenumbering{gobble}
 % Title page
-\maketitle
+% \maketitle
+\input{titlepage.tex}
+% \input{titlepage-member.tex}
 \pagebreak
 \pagenumbering{arabic}
 
@@ -59,7 +63,7 @@
 % other
 \begin{appendix}
     \listoffigures
-    \listoftables
+    % \listoftables
 \end{appendix}
 \pagebreak
 

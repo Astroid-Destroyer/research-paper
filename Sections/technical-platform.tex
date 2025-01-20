@@ -1,2 +1,48 @@
 \section{Technical platform}
-Completely out of this world, the program run on pure energy also It required a whole neutron star to run this for 1 minutes.
+The development and training of the Boishakh model required significant computational resources and software infrastructure. Here we detail the technical specifications and tools used:
+
+
+\subsection{Software Stack}
+\begin{itemize}
+    \item \textbf{Operating System}: Windows 11
+    \item \textbf{Deep Learning Framework}: PyTorch 2.1.0
+    \item \textbf{Python Libraries}:
+    \begin{itemize}
+        \item Transformers 4.36.0 for model architecture
+        \item Datasets 2.15.0 for data handling
+        \item Tokenizers 0.15.0 for text processing
+        \item NumPy 1.24.0 for numerical computations
+        \item Pandas 2.1.0 for data manipulation
+    \end{itemize}
+    \item \textbf{Text Processing Tools}:
+    \begin{itemize}
+        \item NLTK 3.8.1 for linguistic operations
+        \item Indic NLP Library for Bengali-specific processing
+        \item SentencePiece for tokenization
+    \end{itemize}
+\end{itemize}
+
+\subsection{Development Environment}
+\begin{itemize}
+    \item \textbf{Version Control}: Git with GitHub for collaboration
+    \item \textbf{Container Platform}: Docker 24.0.5
+    \item \textbf{Code Editor}: Visual Studio Code with Python and Jupyter extensions
+    \item \textbf{Experiment Tracking}: Weights \& Biases for monitoring training metrics
+\end{itemize}
+
+\subsection{Model Specifications}
+\begin{itemize}
+    \item \textbf{Architecture}: GPT-2 based transformer model
+    \item \textbf{Model Size}: 125M parameters
+    \item \textbf{Training Time}: Approximately 2 weeks
+    \item \textbf{Batch Size}: 32 per GPU
+    \item \textbf{Context Window}: 1024 tokens
+\end{itemize}
+
+\subsection{Data Processing Pipeline}
+\begin{itemize}
+    \item \textbf{Storage}: MongoDB for raw data storage
+    \item \textbf{Preprocessing}: Apache Beam for parallel data processing
+    \item \textbf{Data Format}: JSON for intermediate storage
+    \item \textbf{Dataset Size}: 26.24GB of preprocessed text
+\end{itemize}
