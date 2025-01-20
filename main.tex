@@ -1,18 +1,34 @@
-\documentclass{article}
+\documentclass[12pt, a4paper]{article}
 
+% page formatting
+\usepackage[a4paper, top=1in, bottom=1in, left=1.5in, right=1.5in]{geometry} % Margins
 % Input encoding
 \usepackage[utf8]{inputenc}
 % Font encoding
 \usepackage[T1]{fontenc}
 % For adding graphics(images)
 \usepackage{graphicx}
-% For sub-images
+% For caption-images
 \usepackage{caption}
+% for sub-caption-images
+\usepackage{subcaption}
 % Add-support for float precision
 \usepackage{float}
+% Use Times New Roman font
+\usepackage{times}
 % For space seperator
 \usepackage{setspace}
+% Sub Import package
+\usepackage{import}
+% Make link clickable
+\usepackage[hidelinks]{hyperref}
+% For maths
+\usepackage{amsmath}
+% Control section formatting
+\usepackage{titlesec}
 
+\titleformat{\section}{\bfseries\fontsize{14}{16}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\fontsize{12}{14}\selectfont}{\thesubsection}{1em}{}
 \title{Boisakh - The Bengali GPT for lit-holics}
 \author{
     Akash Lohar \and
@@ -25,7 +41,7 @@
 \date{20-January-2025}
 
 % Global table of content depth
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{3}
 
 % Document
 \begin{document}
@@ -47,8 +63,28 @@
 \end{appendix}
 \pagebreak
 
-% Introduction
-\input{Sections/Introduction.tex}
+% Project Overview
+\input{Sections/project-overview.tex}
+
+% Literature survey
+\input{Sections/literature-survey.tex}
+
+% System block diagram
+\input{Sections/system-block-diagram.tex}
+
+% Project methodology
+\input{Sections/project-methodology.tex}
+
+% Technical platform
+\input{Sections/technical-platform.tex}
+
+% Expected results
+\input{Sections/expected-result.tex}
+
+% Scope of further Improvements
+\input{Sections/scope-of-further-improvement.tex}
+
+\section{Test}
 
 % References
 \newpage

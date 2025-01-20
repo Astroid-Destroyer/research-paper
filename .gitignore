@@ -9,3 +9,5 @@
 *.pdf
 *.blg
 *.bbl
+*.out
+*.bat
