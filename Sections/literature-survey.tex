@@ -1,0 +1,55 @@
+\section{Literature Review}
+
+The creation of transformer architecture for the Boishakh LLM is a vast topic, requiring a review of various related works. Some of the research papers referred to during the development of the LLM model are as follows:
+
+\subsection{Not Low-Resource Anymore: Aligner Ensembling, Batch Filtering, and New Datasets for Bengali-English Machine Translation}
+
+\cite{BengaliMT:1}The authors in this research paper aimed to improve the performance of Bengali-English machine translation by addressing the low resource challenge for this language pair. Some of the methods implemented by them to achieve this are the creation of a high-quality Bengali-English parallel corpus comprising 2.75 million sentence pairs. A custom sentence segmenter for Bengali language was created to specifically tackle the nuances of the Bengali language. Aligner ensemble technique was used which combines the results of multiple sentence aligners to increase the number of correctly aligned sentence pairs extracted from parallel documents. The study found that ensembling significantly improved recall but also introduced incorrect alignments. To address this, a batch filtering technique was implemented along with a LASER toolkit to reduce the incorrect alignments.\\
+The authors also developed a “Rising News” dataset to test the efficiency of the transformer model performance.
+
+\subsection{BanglaGPT: A Model Based on Generative Pretrained Transformers for Bangla Language}
+
+This document summarizes a research study focusing on the development of BanglaGPT, a monolingual, generative, pre-trained transformer-based model for the Bangla language. Existing multilingual pre-trained models like mGPT, though capable of handling Bengali language, show suboptimal performance as compared to the language-specific pre-trained models.\\
+\cite{BanglaGPT:1}The researchers aimed to create a high-performing Bangla language model by addressing the scarcity of large Bangla datasets. They curated a BanglaCLM, comprising 26.24 GB of Bangla text sourced from various online platforms, including OSCAR, Wikipedia, and popular news websites like Prothom Alo and Kaler Kantho. The dataset underwent rigorous preprocessing, including the removal of non-Bangla content and HTML tags, followed by Unicode normalization using a dedicated Bangla normalizer library.
+The researchers chose the GPT-2 model architecture, known for its effectiveness in text generation tasks, due to its reliance on the decoder component of the original transformer model. This architecture utilizes masked self-attention, feed-forward neural networks, and normalization blocks to process sequential data and predict the next token in a sequence.\\
+The BanglaGPT model was trained using the BanglaCLM dataset, employing the Byte-Pair Encoding (BPE) tokenization algorithm and a context size of 128 tokens. The resulting BanglaGPT model achieved a perplexity score of 2.86 on the test set, demonstrating superior performance in text generation compared to both the mGPT model and an LSTM-based sequence-to-sequence model. Future research directions include applying BanglaGPT to downstream NLP tasks like text summarization and question answering, as well as exploring the potential of training a larger GPT-3 model using an expanded Bangla dataset.
+
+\subsection{Llama-3-Nanda-10B-Chat: An Open Generative Large Language Model for Hindi}
+
+The researchers in this paper \cite{Llama3:1} mention the creation of a new, open source, Hindi centric large language model(LLM). It is a 10 billion parameter model based on the Llama 3 model. The developers curated a massive Hindi corpus of 65 billion tokens from sources such as websites, Wikipedia, news articles, and books. They also developed a specialized Hindi text processing pipeline to filter and clean the data.Nanda’s architecture is based on the Llama-3 model, using a decoder-only transformer architecture with enhancements like RoPE positional encoding and grouped-query attention. A custom tokenizer was developed to ensure balanced processing of both Hindi and English. A key innovation was the expansion of the transformer blocks from 32 to 40 to enable the model to integrate new domain and language-specific knowledge. Nanda was instruction-tuned using a bilingual dataset of English and Hindi in
+
+\subsection{WARM (Weight-Averaged Reward Models)}
+
+\cite{WARM:1} This paper explores the use of weight-averaged reward models to improve the performance of LLMs. Reward models incorporated into the training process allowed the researchers to obtain better results in a variety of tasks for natural language processing. This avenue appears promising for improving the capabilities of LLMs.
+
+\cite{WARM:1} The 3 stages of training include pre-training, SFT and RL using RM. Reward hacking comes from misspecification in reward, with the RL exploiting flaws in RM.
+
+\textbf{Problems with WARM:}
+\begin{itemize}
+    \item Degraded performance.
+    \item Checkpoint choice issues.
+    \item Sychophancy.
+    \item Danger risks.
+\end{itemize}
+
+Previous strategies had used prediction ensembling ENS to average rewards from many RMs so that challenges may be overcome.
+
+ENS boosts the reliability of the rewards but has inefficiency and struggles with noise in the labels. The WARM solution involves fine-tuning several RMs and averaging them within the weight space. Multiple different RMs derived from varying fine-tuning sessions are linearly interpolated in the weight space to merge them. WARM strengthens the resilience against label corruption through selecting invariant mechanisms of prediction while diminishing memorization. It counters reward hacking, with a 79.4% win rate over a policy learned with a standard RM.
+
+\subsection{XLNet: Generalized Autoregressive Pretraining}
+
+XLNet is a generalized autoregressive pretraining method that outperforms BERT on 20 tasks, including question answering, natural language inference, sentiment analysis, and document ranking.
+
+\cite{XLNet:1} XLNet benefits from the best of both AR and AE methods while avoiding their drawbacks. AR language modeling is an estimation of the probability distribution of a text corpus. It does not, however, model deep bidirectional contexts well because an AR language model encodes only a unidirectional context.
+
+XLNet addresses the limitations of both AR and AE methods by maximizing the expected log likelihood of a sequence with respect to all possible permutations of the factorization order. By permuting the factorization order, XLNet can capture bidirectional context without resorting to artificial symbols. This enables XLNet to learn richer and denser representations than BERT.
+
+\subsection{TinyLama: An Open Source Small Language Model}
+
+XLNet addresses the limitations of both AR and AE methods by maximizing the expected log likelihood of a sequence with respect to all possible permutations of the factorization order. By permuting the factorization order, XLNet can capture bidirectional context without resorting to artificial symbols. This enables XLNet to learn richer and denser representations than BERT.\cite{TinyLlama:1} The research paper explores the potential of training smaller models with a larger dataset than what is suggested by scaling laws.SLMs, like TinyLlama, are considered accessible, affordable, and suitable for limited resource regimes.They are cheaper to develop and pretrain, requiring a relatively small number of GPUs.
+
+\subsection{LLM-Pruner: On the Structural Pruning of LLMs}
+
+LLM-Pruner is the new task-agnostic compression framework for large language models. The objective of LLM-Pruner is to compress the model in such a way that it reduces its size while retaining its general-purpose capability of being used as a solver for tasks. It performs the structural pruning, which selectively removes non-critical coupled structures based on gradient information.
+
+According to the paper\cite{LlmPruner:1} the model minimizes reliance on the original training corpus and reduces post-training time. LLM-Pruner uses LoRA, a low-rank approximation technique, to recover performance in just 3 hours with limited data. Evaluation on multiple LLMs (LLaMA, Vicuna, and ChatGLM) shows that even with a 20% parameter reduction, the compressed models maintain strong performance in zero-shot classification and generation tasks.
