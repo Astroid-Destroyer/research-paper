@@ -1,1 +1,58 @@
 \section{Scope of further improvement}
+\subsection{ Spelling detection for Errors}
+Spelling correction problem\cite{Ruch2003SpellingCorrectionEPR}s can be separated into two categories. The first category
+addresses the problem of correcting spelling that result in valid, though unintended words
+ and also the problem of
+correcting particular word usage errors . The second category
+is concerned only with errors that result in non-existent words, i.e. words that cannot be
+found in a lexicon. While the first problem is sometimes referred to as context sensitive
+spelling correction the second one reffered as 
+ context-free spelling correction, is perceived as a problem .
+.Working on a word correction problem, Golding and Shabes  introduced a method
+using POS trigrams
+to encode the context. Although this method greatly reduces the
+number of parameters compared to methods based on word trigrams,
+it empirically
+appeared to discriminate poorly when words in the confusion set have the same POS. In
+ this last case, the method is coupled with a more traditional word model. Another approach called syntactic character correction and word correction are necessary to provide a correct
+syntactic correction, therefore in such systems, the usual processing is more complex: first,
+a string-edit module solves the character errors; and second a syntactic module looks for syntactic errors . Here lies the third specificity of our approach as we apply morpho-
+syntactic constraints at the character correction level.There are traditionally two ways to process the semantic filtering: implicitly, for
+example, by working with word language models, or explicitly by using syntactic and
+semantic representation levels. The semantic representation  capitalizes
+on the  semantic types and  relationships of the UMLS Semantic Network . 
+\subsection{Named Entity Recognition}
+Named Entity Recognition (NER)\cite{DataCamp2025NER} serves as a bridge between unstructured text and structured data, enabling machines to sift through vast amounts of textual information and extract nuggets of valuable data in categorized forms. By pinpointing specific entities within a sea of words, NER transforms the way we process and utilize textual data.NER's primary objective is to comb through unstructured text and identify specific chunks as named entities, subsequently classifying them into predefined categories. This conversion of raw text into structured information makes data more actionable, facilitating tasks like data analysis, information retrieval, and knowledge graph construction.Named Entity Recognition (NER) has seen many methods developed over the years, each tailored to address the unique challenges of extracting and categorizing named entities from vast textual landscapes.Rule-based methods are grounded in manually crafted rules. They identify and classify named entities based on linguistic patterns, regular expressions, or dictionaries. While they shine in specific domains where entities are well-defined, such as extracting standard medical terms from clinical notes, their scalability is limited. They might struggle with large or diverse datasets due to the rigidity of predefined rules.Transitioning from manual rules, statistical methods employ models like Hidden Markov Models (HMM) or Conditional Random Fields (CRF). They predict named entities based on likelihoods derived from training data. These methods are apt for tasks with ample labeled datasets at their disposal. Their strength lies in generalizing across diverse texts, but they're only as good as the training data they're fed.Machine learning methods take it a step further by using algorithms such as decision trees or support vector machines. They learn from labeled data to predict named entities. Their widespread adoption in modern NER systems is attributed to their prowess in handling vast datasets and intricate patterns. However, they're hungry for substantial labeled data and can be computationally demanding.
+The latest in the line are deep learning methods, which harness the power of neural networks. Recurrent Neural Networks (RNN) and transformers have become the go-to for many due to their ability to model long-term dependencies in text. They're ideal for large-scale tasks with abundant training data but come with the caveat of requiring significant computational might.Lastly, there's no one-size-fits-all in NER, leading to the emergence of hybrid methods. These techniques intertwine rule-based, statistical, and machine learning approaches, aiming to capture the best of all worlds. They're especially valuable when extracting entities from diverse sources, offering the flexibility of multiple methods. However, their intertwined nature can make them complex to implement and maintain.
+\subsection{Regularization}
+Regularization\cite{AnalyticsVidhya2018Regularization} is a technique used in machine learning and deep learning to prevent overfitting and
+improve the generalization performance of a model. It involves adding a penalty term to the loss function during training.This penalty discourages the model from becoming too complex or having large parameter values, which helps in controlling the model’s ability to fit noise in the training data. Regularization in deep learning methods include L1 and L2 regularization, dropout, early stopping, and more. By applying regularization,models become more robust and better at making accurate predictions on unseen data.L1 and L2 are the most common types of regularization. These update the general cost function by adding
+another term known as the regularization term.
+Cost function = Loss (say, binary cross entropy) + Regularization term
+Due to the addition of this regularization term, the values of weight matrices decrease because it assumes
+that a neural network with smaller weight matrices leads to simpler models. Therefore, it will also reduce
+overfitting to quite an extent.
+However, this regularization term differs in L1 and L2.
+In L2, we have:
+Here, lambda is the regularization parameter. It is the hyperparameter whose value is optimized for better
+results. L2 regularization is also known as weight decay as it forces the weights to decay towards zero (but not exactly zero).
+In L1, we have:In this, we penalize the absolute value of the weights. Unlike L2, the weights may be reduced to zero here. Hence, it is very useful when we are trying to compress our model. Otherwise, we usually prefer L2 over it.
+In keras, we can directly apply regularization to any layer using the regularizers.Below is the sample code to apply L2 regularization to a Dense layer.
+ L1 regularization, also known as Lasso regularization, is a method in deep learning that adds the sum of
+absolute values of the weights to the loss function. It encourages sparsity by driving some weights to zero,resulting in feature selection. L2 regularization, also called Ridge regularization, adds the sum of squared weights to the loss function, promoting smaller but non-zero weights and preventing extreme values.Dropout is a regularization technique used in neural networks to prevent overfitting. During training, 
+a random subset of neurons is “dropped out” by setting their outputs to zero with a certain probability. This forces the network to learn more robust and independent features, as it cannot rely on specific neurons.Dropout improves generalization and reduces the risk of overfitting.
+\subsection{Evaluation of the Language Biases}
+Sociocultural characteristics and long-running language conventions are closely entwined. People’s
+sociolects and dialects can be used as proxies for their nationalities since people speak them
+according to their sociocultural or geographical backgrounds.Such biases\cite{Wasi2024BengaliBiases} arise due to two
+main factors: (i) imbalanced data and (ii) model post/pre-processing. For (i), complex pre-trained
+language models are constructed from extensive datasets to comprehend both explicit and implicit connections, which is crucial to modern Natural Language Processing (NLP) models  for e.g. T5 and GPT-3 .One common bias mitigation strategy is to post-process the LLM outputs before showing them
+to the audience. As biases are more prevalent, several studies have been done on the bias evaluation approaches of LLMs in recent year.Gallegos et al.\cite{Wasi2024BengaliBiases} present a comprehensive survey of bias evaluation and mitigation techniques for large language models, offering taxonomies for metrics, datasets, and mitigation techniques to aid researchers and practitioners in understanding and addressing societal biases in LLMs. Different algorithmic and human-centric LLM evaluation approaches are also introduced to evaluate language models and natural language generation through LLMs. One of the recent works is MetricEval , a method to improve the design and evaluation of NLG model evaluation metrics, aiming to enhance their reliability and validity for better interpretation of results. Liebling et al. suggest enhancing evaluation methods for user-facing translation systems to promote trust and empower users,
+highlighting the importance of considering broader system contexts beyond just machine translation model performance. For evaluation with demographics, Bakalar et al.  demonstrate a practical approach to implementing algorithmic fairness in complex real-world systems, offering insights into separating normative and empirical questions and providing a methodology for assessing tradeoffs in machine learning systems across diverse groups, benefiting both practitioners and researchers.Another influential recent work is EvalLM , an interactive system facilitating prompt refinement by evaluating outputs based on user-defined criteria, demonstrating its effectiveness over manual
+evaluation and suggesting broader applications in model evaluation and alignment. A framework
+for evaluating human-LM interaction in real-world applications is HALIE , which highlights the divergence between non-interactive and interactive metrics and emphasizes the significance of human-LM interaction for language model evaluation.
+ 
+
+ 
+
+
